@@ -1,10 +1,88 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOOIprod.HUB</title>
+    <title>IOOIprod.Main</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Microsoft+Yi+Baiti&display=swap">
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: black;
+            border: 5px solid white;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: pulse 3s infinite;
+        }
+
+        .text {
+            font-family: 'Microsoft Yi Baiti', sans-serif;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.2);
+        }
+
+        .circle:hover .text {
+            transform: scale(1);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>IOOIprod</h1>
+    <div class="circle" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="redirectToLink('https://www.youtube.com/channel/UCzbwWF4v7fzL_RO6ut2B5NA')">
+        <div class="text" id="circleText"> N/O </div>
+    </div>
+    <script>
+        function redirectToLink(url) {
+            window.location.href = url;
+        }
+
+        const circle = document.querySelector('.circle');
+        const text = document.getElementById('circleText');
+        let pulseInterval;
+
+        function startPulse() {
+            circle.style.animationPlayState = "running";
+        }
+
+        function stopPulse() {
+            circle.style.animationPlayState = "paused";
+        }
+
+        const circleSize = parseFloat(window.getComputedStyle(circle).getPropertyValue('width'));
+        const textSize = (circleSize / text.textContent.length) * 1.8;
+
+        text.style.fontSize = `${textSize}px`;
+    </script>
 </body>
 </html>
