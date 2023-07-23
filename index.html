@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOOIprod.Main</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Microsoft+Yi+Baiti&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IOOIprod.main</title>
     <style>
+        /* Vos styles CSS existants */
         body {
             background-color: black;
             display: flex;
@@ -30,45 +30,54 @@
             animation: pulse 3s infinite;
         }
 
-        .text {
-            font-family: 'Microsoft Yi Baiti', sans-serif;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+        .circle-img {
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
         }
 
         .circle:hover {
             transform: scale(1.2);
         }
 
-        .circle:hover .text {
+        .circle:hover .circle-img {
             transform: scale(1);
         }
 
         @keyframes pulse {
             0%, 100% {
-                transform: scale(1);
+                transform: scale(.9);
             }
             50% {
-                transform: scale(1.05);
+                transform: scale(1.15);
             }
         }
+          /* Nouveaux styles pour l'effet de survol */
+          .circle:hover {
+            background-color: white; /* Le fond du cercle devient blanc au survol */
+        }
+
+        .circle-img {
+            transition: filter 0.3s ease; /* Ajout d'une transition pour le filtre de l'image */
+        }
+
+        .circle:hover .circle-img {
+            filter: invert(100%); /* Inversion des couleurs de l'image au survol */
+        }
+    </style>
     </style>
 </head>
 <body>
     <div class="circle" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="redirectToLink('https://www.youtube.com/channel/UCzbwWF4v7fzL_RO6ut2B5NA')">
-        <div class="text" id="circleText"> N/O </div>
+        <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/00OFFICIALLOGONOlogNO.png" alt="Image dans le cercle">
     </div>
+
     <script>
         function redirectToLink(url) {
             window.location.href = url;
         }
 
         const circle = document.querySelector('.circle');
-        const text = document.getElementById('circleText');
         let pulseInterval;
 
         function startPulse() {
@@ -78,11 +87,6 @@
         function stopPulse() {
             circle.style.animationPlayState = "paused";
         }
-
-        const circleSize = parseFloat(window.getComputedStyle(circle).getPropertyValue('width'));
-        const textSize = (circleSize / text.textContent.length) * 1.8;
-
-        text.style.fontSize = `${textSize}px`;
     </script>
 </body>
 </html>
