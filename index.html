@@ -27,8 +27,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100px;
-            height: 100px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             background-color: black;
             border: 5px solid white;
@@ -57,7 +57,7 @@
                 transform: scale(.9);
             }
             50% {
-                transform: scale(1.15);
+                transform: scale(1.1);
             }
         }
 
@@ -92,13 +92,13 @@
         }
         .line::before {
             color: white; /* Couleur du texte (blanc) */
-            margin-left: 80px; /* Espacement entre le bord gauche et le texte */
+            margin-left: 100px; /* Espacement entre le bord gauche et le texte */
         }
     </style>
 </head>
 <body>
     <div class="circle-container">
-        <div class="circle" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="toggleLines()">
+        <div class="circle" style="width: 130px; height: 130px;" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="toggleLines()">
             <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/00OFFICIALLOGONOlogNO0.png" alt="Image dans le cercle">
         </div>
         <div class="line-container" id="lineContainer" style="display: none; color: white; ">
