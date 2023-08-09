@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=4.0, user-scalable=no"> <!-- Modifie le maximum-scale à 2.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>IOOIprod.main</title>
     <style>
         /* Vos styles CSS existants */
@@ -20,15 +20,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh; /* Réduit la hauteur pour centrer verticalement */
+            height: calc(50vh - 50px); /* Réduit la hauteur pour centrer verticalement */
         }
 
         .circle {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 130px;
-            height: 130px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background-color: black;
             border: 5px solid white;
@@ -36,6 +36,7 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             animation: pulse 3s infinite;
+            margin: 0 20px;
         }
 
         .circle-img {
@@ -57,7 +58,7 @@
                 transform: scale(.9);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.15);
             }
         }
 
@@ -92,14 +93,14 @@
         }
         .line::before {
             color: white; /* Couleur du texte (blanc) */
-            margin-left: 100px; /* Espacement entre le bord gauche et le texte */
+            margin-left: 80px; /* Espacement entre le bord gauche et le texte */
         }
     </style>
 </head>
 <body>
     <div class="circle-container">
-        <div class="circle" style="width: 130px; height: 130px;" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="toggleLines()">
-            <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/00OFFICIALLOGONOlogNO0.png" alt="Image dans le cercle">
+        <div class="circle" onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="toggleLines()">
+            <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/00OFFICIALLOGONOlogNO.png" alt="Image dans le cercle">
         </div>
         <div class="line-container" id="lineContainer" style="display: none; color: white; ">
             <div class="line: :before">- N/O - W4US - / Kosmic - Vol.1 / Released on: 07/24/2023</div>
@@ -110,7 +111,7 @@
 
     <div class="bottom-button-container">
         <div class="circle" style="width: 20px; height: 20px; border: 2px solid white; animation: pulse 32s infinite; " onmouseenter="stopPulse()" onmouseleave="startPulse()" onclick="redirectToLink('https://www.youtube.com/channel/UCzbwWF4v7fzL_RO6ut2B5NA')">
-            <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/ytb0.png" alt="Image dans le cercle">
+            <img class="circle-img" src="https://raw.githubusercontent.com/IOOIprod/main/main/ytb.png" alt="Image dans le cercle">
         </div>
     </div>
 
