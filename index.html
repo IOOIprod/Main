@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: calc(50vh - 50px); /* Réduit la hauteur pour centrer verticalement */
+            height: calc(1000vh - 0px); /* Réduit la hauteur pour centrer verticalement */
         }
 
         .circle {
@@ -63,7 +63,6 @@
         }
 
         /* Nouveaux styles pour l'effet de survol */
-    @media (max-width: 768px) { /* Ajoutez une règle de media query pour les appareils de largeur maximale de 768px (ou ajustez cette valeur selon vos besoins) */
         .circle:hover {
             background-color: white; /* Le fond du cercle devient blanc au survol */
         }
@@ -80,29 +79,39 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            bottom: 20px; /* Ajustez cette valeur selon vos besoins */
+            bottom: 8px; /* Ajustez cette valeur selon vos besoins */
             left: 0;
             right: 0;
         }
-
-        .line-container {
-            display: block; /* Au lieu de "flex" pour que les lignes apparaissent en dessous */
-            text-align: center;
-        }
-        
         .line {
             width: 2px;
             height: 20px;
             background-color: white; /* Couleur blanche */
             margin: 2px 0;
-            display: block; /* Les lignes de texte sont maintenant des blocs */
-            margin: 10px 0;
+            display: flex;
+            align-items: center;
         }
         .line::before {
             color: white; /* Couleur du texte (blanc) */
             margin-left: 80px; /* Espacement entre le bord gauche et le texte */
         }
-    }
+    @media (max-width: 680px) {
+        .circle-container {
+            flex-direction: column;
+        }
+
+        .line-container {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .line {
+            display: block;
+            text-align: center;
+            margin: 120px 0;
+        }
+    }    
     </style>
 </head>
 <body>
