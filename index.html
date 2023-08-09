@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0, user-scalable=no"> <!-- Modifie le maximum-scale à 2.0 -->
     <title>IOOIprod.main</title>
     <style>
         /* Vos styles CSS existants */
@@ -63,6 +63,7 @@
         }
 
         /* Nouveaux styles pour l'effet de survol */
+    @media (max-width: 768px) { /* Ajoutez une règle de media query pour les appareils de largeur maximale de 768px (ou ajustez cette valeur selon vos besoins) */
         .circle:hover {
             background-color: white; /* Le fond du cercle devient blanc au survol */
         }
@@ -83,18 +84,25 @@
             left: 0;
             right: 0;
         }
+
+        .line-container {
+            display: block; /* Au lieu de "flex" pour que les lignes apparaissent en dessous */
+            text-align: center;
+        }
+        
         .line {
             width: 2px;
             height: 20px;
             background-color: white; /* Couleur blanche */
             margin: 2px 0;
-            display: flex;
-            align-items: center;
+            display: block; /* Les lignes de texte sont maintenant des blocs */
+            margin: 10px 0;
         }
         .line::before {
             color: white; /* Couleur du texte (blanc) */
             margin-left: 80px; /* Espacement entre le bord gauche et le texte */
         }
+    }
     </style>
 </head>
 <body>
